@@ -22,12 +22,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var itemToAdd: UITextField!
     
-    @IBAction func addToStorare(sender: AnyObject) {
+    @IBAction func addToStorage(sender: AnyObject) {
         var array = NSUserDefaults.standardUserDefaults().objectForKey("array") as AnyObject! as! Array<String>
-        print(array)
         array.append(itemToAdd.text!)
+        itemToAdd.text = nil
         NSUserDefaults.standardUserDefaults().setObject(array, forKey: "array")
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,6 +40,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         textField.resignFirstResponder()
+        addToStorage(self)
         return true
     }
 }
