@@ -7,7 +7,9 @@ An offline to-do list to keep track of and delete items to do
 * UITableView - to display goals
 * UITextFieldDelegate - to escape the keyboard
 * AutoLayout Constraints
-* Reads from internal storage through NSUSerDefaults
+* Reads from internal storage through NSUSerDefaults to share data between two
+  controllers
+* Utiizes a tabbed view application
 
 ### GIF
 
